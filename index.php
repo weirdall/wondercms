@@ -81,7 +81,7 @@ class WonderCMS
 		return json_decode(json_encode($items));
 	}
 	public static function url($location = null) {
-		return (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'https://' : 'http://').$_SERVER['HTTP_HOST'].str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\', '/', ROOT))."/{$location}";
+		return ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || ( isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') ? 'https://' : 'http://').$_SERVER['HTTP_HOST'].str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\', '/', ROOT))."/{$location}";
 	}
 	public static function themeUrl($location) {
 		return self::url('themes/'.self::get('theme').'/'.$location);
