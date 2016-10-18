@@ -33,6 +33,7 @@ class WonderCMS
 		$content = trim($_POST['content']);
 		if (in_array($label, ['theme', 'subside', 'menuItems', 'webSiteTitle', 'description', 'keywords', 'copyright'])) self::set($label, $content);
 		elseif ($label == 'password') self::set($label, password_hash($content, PASSWORD_DEFAULT));
+		elseif ($label == 'whitelist'){ self::set($label, $content); }
 		else {
 			$db = json_decode(file_get_contents(ROOT.DS.'db.js'));
 			$db->{$label}->content = $content;
@@ -45,6 +46,10 @@ class WonderCMS
 		return $toEdit;
 	}
 	public static function login() {
+		$whitelist=self::get('whitelist');
+		if ((strpos($whitelist, $_SERVER['REMOTE_ADDR']) === false) && (strpos($whitelist, $_SERVER['HTTP_X_REAL_IP']) === false)){	
+			self::redirect();
+		} 
 		if (password_verify(@$_POST['password'], self::get('password'))) {
 			$_SESSION['l'] = true;
 			self::redirect();

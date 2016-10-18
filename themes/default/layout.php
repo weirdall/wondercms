@@ -30,6 +30,11 @@
 					<div class="change border"><b>Password</b>&nbsp;
 						<input type="password" id="password">&nbsp;<button id="changePassword">Change</button>
 					</div>
+					<div class="change border"><b>IP whitelist</b>&nbsp;
+						<input type="text" id="whitelist" value="<?php echo WonderCMS::get('whitelist'); ?>">&nbsp;<button id="changeWhitelist">Change</button>
+					</div>
+
+
 					<div class="change border"><b>Theme</b>&nbsp;
 						<span id="theme">
 							<select id="theme">
@@ -115,6 +120,16 @@
 								alert('Password changed');
 							});
 						}
+					});
+					$('#changeWhitelist').on('click', function () {
+						if (!$('#whitelist').val().trim()) {
+							alert('No IP Whitelist enabled!');
+						}
+						
+						$.post("<?php echo WonderCMS::url('index.php'); ?>", {label: 'whitelist', content: $('#whitelist').val()}, function () {
+							alert('IP Whitelist updated');
+						});
+						
 					});
 					$('.toggle').click(function(){
 						$('.hide').toggle('200');
