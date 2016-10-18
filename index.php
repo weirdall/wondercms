@@ -47,9 +47,11 @@ class WonderCMS
 	}
 	public static function login() {
 		$whitelist=self::get('whitelist');
-		if ((strpos($whitelist, $_SERVER['REMOTE_ADDR']) === false) && (strpos($whitelist, $_SERVER['HTTP_X_REAL_IP']) === false)){	
-			self::redirect();
-		} 
+		if(!empty($whitelist)){
+			if ((strpos($whitelist, $_SERVER['REMOTE_ADDR']) === false) && (strpos($whitelist, $_SERVER['HTTP_X_REAL_IP']) === false)){	
+				self::redirect();
+			}
+		}
 		if (password_verify(@$_POST['password'], self::get('password'))) {
 			$_SESSION['l'] = true;
 			self::redirect();
