@@ -1,0 +1,171 @@
+@font-face {
+	font-family:SpecialElite;
+	src: url('/template/krneky_blue/SpecialElite.ttf');
+}
+
+@font-face {
+	font-family:Vollkorn-BoldItalic;
+	src: url('/template/krneky_blue/Vollkorn-BoldItalic.ttf');
+}
+
+
+
+body {
+	font-family: Trebuchet MS, Georgia, serif;
+
+	margin:25px 0px; padding:0px;
+	text-align:center;
+	background: #000;
+	color: #fff;
+	
+	font-size: 16px;
+	
+	line-height: 200%;
+}
+ 
+h1 {
+	font-family: SpecialElite;
+	font-size: 1.6em;
+	text-transform: uppercase;
+	position: absolute;
+}
+ 
+b {
+	font-family: SpecialElite;
+	font-size: 1.6em;
+	color: #990000;
+	position: absolute;
+}
+
+.slogan {
+	padding-top: 1.85em;
+	font-size: 1.1em;
+}
+ 
+a {
+	color: #990000;
+	text-decoration: none;
+}
+ 
+a:hover {color: #fff;}
+ 
+.container {
+	width: 890px;
+	margin:0px auto;
+	text-align:left;
+	padding:15px;
+}
+ 
+.insider {
+	width: 890px; float: left;
+	
+}
+	
+ 
+#nav {
+	font-family: SpecialElite;
+	width: auto;
+	font-size: 1em;
+	list-style: none;
+	padding: 0;
+	margin-top: 3em;
+	float: right;
+	clear: both;
+}
+ 
+#nav li {
+	background-color: #660000;
+	text-align: left;
+	
+	float: left;
+	text-transform: uppercase;
+	border-right: 2px solid #000;
+	display: block;
+}
+	
+#nav li a, #nav li a:visited {
+	display: block;
+	padding: 0.4em 4em 0.4em 0.4em;
+	color: #FFF;
+	text-decoration: none;
+}
+	
+#nav li a:hover {
+	
+
+	text-decoration: none;
+}
+		
+#nav li a.current, #nav li a.current:visited, #nav li a.current:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.left {
+	float: left;
+}
+
+
+.footer {
+
+	font-family: Vollkorn-BoldItalic;
+	text-transform: uppercase;
+	
+	width: 890px;
+	font-size: 0.8em;
+	text-align: right;
+	margin-top: 1em;
+	padding: 5px;
+	border-top: 2px solid #ccc;
+	float: left;
+	clear: both;
+}
+
+.settings {
+	clear: both;
+	margin: 15px;
+	border-top: 5px solid #65A5D1;
+	text-align: left;
+}
+
+.wrong {color: #333333;}
+
+.round {
+	font-family: SpecialElite;
+	width: 60%; 
+	color: rgb(68, 68, 68); 
+	height: auto; 
+	padding: 20px; 
+	background: none repeat scroll 0% 0% rgb(255, 255, 255); 
+	margin-top: 40px; 
+	margin-left: 0%; 
+	margin-bottom: 10px; 
+	border: 1px solid rgb(255, 255, 255); -moz-border-radius: 5px 5px 5px 5px;
+
+}
+
+p {	
+	width: 60%; 
+	text-align: justify;
+	margin-top: 30px;
+}
+
+.side {
+	font-family: Vollkorn-BoldItalic;
+	font-size: 12px;
+	text-transform: uppercase;
+	line-height: 140%;
+	width: 200px; 
+	color: rgb(0, 0, 0); 
+	float: right; 
+	height: auto; 
+	padding: 20px; 
+	background: none repeat scroll 0% 0% rgb(255, 255, 255); 
+	margin-top: 40px; 
+	margin-left: 10%; 
+	margin-bottom: 10%; 
+	border: 1px solid rgb(255, 255, 255); 
+	-moz-border-radius: 5px 5px 5px 5px;
+	
+
+}
