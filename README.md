@@ -30,7 +30,7 @@ WonderCMS - re-built from scratch
     
         location / {
             # First attempt to serve request as file, then index.php
-    	try_files $uri @rewrite;
+    	    try_files $uri @rewrite;
         }
     
         # Rewrite to index.php
