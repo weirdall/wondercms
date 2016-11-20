@@ -36,7 +36,7 @@
 
 
 					<div class="change border"><b>Theme</b>&nbsp;
-						<span id="theme">
+						<span>
 							<select id="theme">
 								<?php foreach (glob(ROOT.DS.'themes'.DS.'*', GLOB_ONLYDIR) as $dir): ?>
 									<?php $dir = basename($dir); ?>
